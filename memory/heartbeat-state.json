@@ -1,0 +1,12 @@
+{
+  "lastChecks": {
+    "weather": 1773200280,
+    "calendar": 1773226680,
+    "email": 1771740139,
+    "social": 1772006121
+  },
+  "lastInteraction": 1773200280,
+  "lastHeartbeat": 1773226680,
+  "pcecLastRun": 1772503860,
+  "note": "邮件需要OAuth认证，无法检查。天气检查失败(网络问题)。种植科复查3月4日10:00（明天）"
+}

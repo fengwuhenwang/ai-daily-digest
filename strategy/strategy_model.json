@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-21",
+  "state_machine": {
+    "current_state": "STABLE",
+    "state_history": [
+      {
+        "state": "STABLE",
+        "timestamp": "2026-02-21T14:16:00Z",
+        "reason": "Initial state"
+      }
+    ],
+    "transitions": {
+      "STABLE": {
+        "next": ["DRIFTING"],
+        "triggers": ["连续3次决策评分低于30分"]
+      },
+      "DRIFTING": {
+        "next": ["STABLE", "MISALIGNED"],
+        "triggers": ["评分恢复", "风险暴露上升+评分下降"]
+      },
+      "MISALIGNED": {
+        "next": ["DRIFTING", "RECONSTRUCTION_REQUIRED"],
+        "triggers": ["风险缓解", "资本结构恶化"]
+      },
+      "RECONSTRUCTION_REQUIRED": {
+        "next": ["STABLE"],
+        "triggers": ["用户确认新战略"]
+      }
+    }
+  },
+  "monitoring": {
+    "decision_quality_trend": {
+      "enabled": true,
+      "window_size": 10,
+      "current_trend": "neutral",
+      "avg_score": 0,
+      "recent_scores": []
+    },
+    "capital_growth_trend": {
+      "enabled": true,
+      "window_size": 30,
+      "current_trend": "stable",
+      "change_percent": 0
+    },
+    "risk_exposure": {
+      "enabled": true,
+      "current_level": "low",
+      "change_direction": "stable",
+      "components": {
+        "financial": 0,
+        "health": 0,
+        "career": 0,
+        "relationship": 0
+      }
+    },
+    "strategy_consistency": {
+      "enabled": true,
+      "score": 100,
+      "drift_count": 0,
+      "last_review": null
+    }
+  },
+  "thresholds": {
+    "decision_score_low": 30,
+    "drift_consecutive_count": 3,
+    "risk_exposure_increase": 0.2,
+    "capital_deterioration": -0.15,
+    "consistency_score_low": 60
+  },
+  "reconstruction_proposals": [],
+  "summary": {
+    "overall_health": "good",
+    "next_review": null,
+    "recommendations": []
+  }
+}

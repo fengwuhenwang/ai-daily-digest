@@ -1,0 +1,45 @@
+{
+  "id": "decision_001",
+  "title": "",
+  "timestamp": "",
+  "decision_maker": "Pony",
+  "dimensions": {
+    "goal_clarity": {
+      "score": 0,
+      "notes": ""
+    },
+    "info_completeness": {
+      "score": 0,
+      "notes": ""
+    },
+    "risk_awareness": {
+      "score": 0,
+      "notes": ""
+    },
+    "probability_reasonableness": {
+      "score": 0,
+      "notes": ""
+    },
+    "execution_clarity": {
+      "score": 0,
+      "notes": ""
+    }
+  },
+  "total_score": 0,
+  "cognitive_biases": [],
+  "context": {
+    "situation": "",
+    "alternatives_considered": [],
+    "reasoning_process": ""
+  },
+  "result": {
+    "outcome": "",
+    "actual_vs_expected": "",
+    "lessons_learned": ""
+  },
+  "review": {
+    "score_after_review": null,
+    "review_date": null,
+    "updated_notes": ""
+  }
+}

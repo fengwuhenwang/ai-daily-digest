@@ -1,0 +1,13 @@
+{
+  "version": "5.1",
+  "created": "2026-02-21T13:49:42Z",
+  "file_hashes": {},
+  "output_cache": {},
+  "token_budget": {
+    "default": 8000,
+    "reasoning": 4000,
+    "output": 4000
+  },
+  "compression_threshold": 50000,
+  "agent_limit": 2
+}

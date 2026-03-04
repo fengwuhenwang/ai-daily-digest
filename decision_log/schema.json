@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "engine": "Decision Scoring Engine",
+  "dimensions": {
+    "goal_clarity": {
+      "name": "目标清晰度",
+      "weight": 10,
+      "description": "决策目标是否明确、可衡量、有时间约束"
+    },
+    "info_completeness": {
+      "name": "信息完整度",
+      "weight": 10,
+      "description": "决策前信息收集是否充分、来源是否可靠"
+    },
+    "risk_awareness": {
+      "name": "风险识别度",
+      "weight": 10,
+      "description": "是否识别并评估了主要风险因素"
+    },
+    "probability_reasonableness": {
+      "name": "概率合理性",
+      "weight": 10,
+      "description": "对不确定性的估计是否基于合理推理"
+    },
+    "execution_clarity": {
+      "name": "执行路径清晰度",
+      "weight": 10,
+      "description": "决策到行动是否有清晰的执行计划"
+    }
+  },
+  "total_max": 50,
+  "pass_threshold": 30,
+  "review_frequency": "monthly"
+}

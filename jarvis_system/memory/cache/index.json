@@ -1,0 +1,11 @@
+{
+  "index_version": "1.0",
+  "last_cleanup": "2026-02-21T00:00:00Z",
+  "entries": {},
+  "stats": {
+    "total_entries": 0,
+    "cache_hits": 0,
+    "cache_misses": 0,
+    "total_tokens_saved": 0
+  }
+}

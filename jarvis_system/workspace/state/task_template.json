@@ -1,0 +1,32 @@
+{
+  "task_id": "",
+  "goal": "",
+  "description": "",
+  "status": "pending|active|completed|failed|paused",
+  "priority": "low|medium|high|critical",
+  "created_at": "",
+  "updated_at": "",
+  "deadline": "",
+  
+  "agents_used": [],
+  "artifacts": {},
+  "decisions": [],
+  
+  "next_step": "",
+  "blocked_by": [],
+  "depends_on": [],
+  
+  "context": {
+    "user_model_delta": null,
+    "relevant_memories": [],
+    "strategy_impact": null
+  },
+  
+  "metrics": {
+    "token_used": 0,
+    "agents_invoked": 0,
+    "execution_time_ms": 0
+  },
+  
+  "history": []
+}

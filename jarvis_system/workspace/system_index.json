@@ -1,0 +1,36 @@
+{
+  "version": "5.1",
+  "system": "Jarvis V5.1 - Token优化版",
+  "last_updated": "2026-02-21T13:00:00Z",
+  "architecture": {
+    "main_control": "jarvis_system/core/jarvis_v5.1_agent.md",
+    "agent_template": "jarvis_system/core/agent_template_v5.1.md",
+    "prompt_modules": "jarvis_system/modules/prompt_templates_v5.1.md"
+  },
+  "workspace": {
+    "user_model": "jarvis_system/workspace/user_model/user.json",
+    "memory": "jarvis_system/workspace/memory/",
+    "state": "jarvis_system/workspace/state/",
+    "cache": "jarvis_system/workspace/cache/",
+    "outputs": "jarvis_system/workspace/outputs/"
+  },
+  "token_control": {
+    "config": "jarvis_system/workspace/token_control.json",
+    "thresholds": {
+      "session_warning": 8000,
+      "session_critical": 15000,
+      "agent_input_warning": 3000,
+      "agent_input_critical": 6000
+    }
+  },
+  "optimization_targets": {
+    "token_reduction": "≥60%",
+    "max_agents_per_task": 3,
+    "memory_top_k": 3,
+    "max_prompt_tokens": 4000
+  },
+  "files": {
+    "OPTIMIZATION_SUMMARY": "jarvis_system/OPTIMIZATION_V5.1_SUMMARY.md",
+    "CHANGELOG": "jarvis_system/CHANGELOG.md"
+  }
+}

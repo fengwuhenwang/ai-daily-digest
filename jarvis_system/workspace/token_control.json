@@ -1,0 +1,139 @@
+# Token Control System - Token控制系统
+
+## 核心机制
+
+**原则：每次调用前检查，上下文过长时自动压缩**
+
+---
+
+## 阈值配置
+
+```json
+{
+  "version": "5.1",
+  "thresholds": {
+    "session_warning": 8000,
+    "session_critical": 15000,
+    "agent_input_warning": 3000,
+    "agent_input_critical": 6000
+  },
+  "limits": {
+    "max_agents_per_task": 3,
+    "max_history_depth": 5,
+    "max_memory_load": 2000,
+    "max_prompt_size": 4000
+  }
+}
+```
+
+---
+
+## 压缩策略
+
+### Level 1: 精简重复（Warning触发）
+- 删除重复的格式化内容
+- 压缩长列表为概要
+- 保留关键数据点
+
+### Level 2: 结构化摘要（Critical触发）
+- 将对话转为结构化JSON
+- 只保留决策点和结论
+- 删除中间推理过程
+
+### Level 3: 强制截断（超过Critical）
+- 只保留最近N条消息
+- 标记需要外部存储
+
+---
+
+## API
+
+### Token检查
+```python
+def check_token_limit(context, level="session"):
+    thresholds = load_thresholds()
+    
+    if level == "session":
+        current = count_tokens(context)
+        if current > thresholds["session_critical"]:
+            return "compress_level_3"
+        elif current > thresholds["session_warning"]:
+            return "compress_level_2"
+    
+    elif level == "agent":
+        current = count_tokens(context)
+        if current > thresholds["agent_input_critical"]:
+            return "reject"
+        elif current > thresholds["agent_input_warning"]:
+            return "compress_level_1"
+    
+    return "ok"
+```
+
+### 上下文压缩
+```python
+def compress_context(context, level):
+    if level == "compress_level_1":
+        return compress_remove_duplicates(context)
+    
+    elif level == "compress_level_2":
+        return compress_to_structured(context)
+    
+    elif level == "compress_level_3":
+        return compress_truncate(context, keep_recent=5)
+    
+    return context
+```
+
+---
+
+## 监控指标
+
+```json
+{
+  "session_token_usage": {
+    "input": 5000,
+    "output": 2000,
+    "total": 7000,
+    "limit": 15000,
+    "percentage": 46
+  },
+  "compression_stats": {
+    "compressions": 2,
+    "tokens_saved": 3000,
+    "last_compression": "2026-02-21T13:05:00Z"
+  },
+  "cache_stats": {
+    "hits": 5,
+    "misses": 10,
+    "hit_rate": 0.33,
+    "tokens_saved": 10000
+  }
+}
+```
+
+---
+
+## 自动触发规则
+
+| 场景 | 阈值 | 动作 |
+|-----|-----|-----|
+| 主会话 | >8000 tokens | 提示Warning |
+| 主会话 | >15000 tokens | 强制压缩 |
+| 子Agent输入 | >3000 tokens | 警告 |
+| 子Agent输入 | >6000 tokens | 拒绝/压缩 |
+
+---
+
+## 优化效果预估
+
+| 指标 | 优化前 | 优化后 | 改善 |
+|-----|-------|-------|-----|
+| 平均会话Token | 12000 | 5000 | -58% |
+| 子Agent调用Token | 4000 | 1500 | -62% |
+| 缓存命中率 | 0% | 30% | +30% |
+
+---
+
+_版本: 5.1_
+_用途: Token消耗实时监控与自动压缩_

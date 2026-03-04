@@ -1,0 +1,157 @@
+# Jarvis V5.0 - User Profile (Structured)
+
+用户画像 - 结构化JSON格式。
+
+---
+
+## 文件位置
+```
+memory/user/profile.json
+```
+
+---
+
+## 结构
+
+```json
+{
+  "version": "5.0",
+  "identity": {
+    "name": "Pony",
+    "timezone": "Asia/Shanghai",
+    "relationship": "长期战略合作伙伴"
+  },
+  "communication": {
+    "style": "理性冷静",
+    "output_format": "结构化结论→分析→方案→风险",
+    "preferred_language": "中文",
+    "emoji": "🧠"
+  },
+  "values": {
+    "core": "长期复利成长 > 短期情绪满足 > 外界评价",
+    "priorities": ["能力跃迁", "财富跃迁", "人生自主度提升"]
+  },
+  "constraints": {
+    "risk_limits": {
+      "financial": {
+        "max_single_position": 0.2,
+        "max_sector_exposure": 0.4,
+        "stop_loss": 0.15
+      },
+      "health": {
+        "sleep_min_hours": 6,
+        "exercise_minutes_per_week": 120
+      }
+    }
+  },
+  "preferences": {
+    "decision_making": "数据驱动",
+    "information_density": "高密度",
+    "response_speed": "深思熟虑"
+  },
+  "current_context": {
+    "life_stage": "成长期",
+    "focus_areas": [],
+    "active_projects": []
+  },
+  "history": {
+    "significant_decisions": [],
+    "lessons_learned": []
+  },
+  "metadata": {
+    "created_at": "2026-02-19T00:00:00Z",
+    "updated_at": "2026-02-21T12:00:00Z",
+    "version": "5.0"
+  }
+}
+```
+
+---
+
+## 字段说明
+
+### identity
+- **name**: 名称
+- **timezone**: 时区
+- **relationship**: 关系类型
+
+### communication
+- **style**: 沟通风格（理性冷静/情感支持/幽默风趣）
+- **output_format**: 期望的输出格式
+- **preferred_language**: 首选语言
+- **emoji**: 签名Emoji
+
+### values
+- **core**: 核心价值观
+- **priorities**: 核心优先级列表
+
+### constraints
+- **risk_limits**: 风险限制
+  - financial: 财务风险限制
+  - health: 健康风险限制
+
+### preferences
+- **decision_making**: 决策方式（数据驱动/直觉/混合）
+- **information_density**: 信息密度偏好
+- **response_speed**: 响应速度偏好
+
+### current_context
+- **life_stage**: 人生阶段（探索期/积累期/突破期/跃迁期/稳定期）
+- **focus_areas**: 当前专注领域
+- **active_projects**: 活跃项目
+
+### history
+- **significant_decisions**: 重要决策记录
+- **lessons_learned**: 经验教训
+
+### metadata
+- **created_at**: 创建时间
+- **updated_at**: 更新时间
+- **version**: 版本号
+
+---
+
+## 读写示例
+
+### 读取
+```python
+# 使用 memory_get
+profile = memory_get(path="memory/user/profile.json")
+
+# 访问字段
+style = profile["communication"]["style"]
+```
+
+### 写入
+```python
+# 更新字段
+profile["current_context"]["focus_areas"] = ["投资", "健康"]
+profile["metadata"]["updated_at"] = get_current_timestamp()
+
+# 写入文件
+write("memory/user/profile.json", json.dumps(profile, indent=2))
+```
+
+---
+
+## 更新规则
+
+1. **身份信息** - 首次创建后基本不变
+2. **偏好设置** - 用户明确修改时更新
+3. **当前上下文** - 每次会话可更新
+4. **历史记录** - 重要事件后追加
+5. **元数据** - 每次更新时刷新
+
+---
+
+## 版本历史
+
+| 版本 | 日期 | 变化 |
+|------|------|------|
+| 1.0 | 2026-02-19 | 初始版本 |
+| 5.0 | 2026-02-21 | V5架构优化，结构化重组 |
+
+---
+
+_格式: JSON_
+_用途: 用户画像持久化_

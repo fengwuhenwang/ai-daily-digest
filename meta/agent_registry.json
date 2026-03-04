@@ -1,0 +1,17 @@
+{
+  "registered_agents": [
+    "strategy_agent.txt",
+    "active_thinking_agent.txt",
+    "weekly_review_agent.txt",
+    "life_planning_agent.txt",
+    "domain_investor.txt"
+  ],
+  "multi_agent_mode_trigger": [
+    "complex_decision",
+    "multi_step_execution",
+    "strategic_analysis",
+    "long_term_planning",
+    "structured_output_required"
+  ],
+  "max_concurrent_agents": 3
+}

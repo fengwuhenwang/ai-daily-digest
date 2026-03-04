@@ -1,0 +1,29 @@
+{
+  "long_term_objective": "Maximize Long-Term Freedom",
+  "time_horizon": "15y",
+  "target_milestone": {
+    "freedom_index": 0.7,
+    "years_to_half_freedom": 3
+  },
+  "weekly_work_hours": 30,
+  "accept_phase_income_drop": true,
+  "utility_weights": {
+    "capital_growth": 0.35,
+    "risk_control": 0.20,
+    "freedom_level": 0.30,
+    "health_stability": 0.10,
+    "cognitive_growth": 0.05,
+    "social_impact": 0.00
+  },
+  "non_negotiables": [
+    "No high leverage",
+    "No single income dependency",
+    "Maintain 18-24 month liquidity buffer",
+    "No chronic stress above threshold"
+  ],
+  "sacrifice_tolerance": {
+    "volatility": 0.75,
+    "stress": 0.45,
+    "uncertainty": 0.80
+  }
+}

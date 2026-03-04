@@ -1,0 +1,140 @@
+# 优化版多Agent调度协议 - 最大限度减少token消耗
+
+## 调度协议优化规则：
+
+### 1. 智能任务预分析
+**目标**：减少不必要的子Agent调用
+
+**实现方式**：
+- 任务复杂度评估算法
+- 智能分类系统
+- 预分析过滤机制
+
+**伪代码**：
+```python
+def analyze_task(task):
+    complexity = assess_complexity(task)
+    if complexity < 0.3:
+        return "single_agent"
+    elif complexity < 0.7:
+        return "optimized_multi_agent"
+    else:
+        return "full_multi_agent"
+```
+
+### 2. Prompt模板优化
+**目标**：减少每个prompt的token消耗
+
+**优化措施**：
+- 压缩prompt模板
+- 移除冗余信息
+- 优化指令表达
+- 使用更高效的prompt结构
+
+**示例优化**：
+```text
+# 优化前
+"请分析以下任务，考虑所有可能的角度，包括资源评估、风险分析和路径设计..."
+
+# 优化后
+"分析任务：[任务描述]。重点：资源、风险、路径。输出：结构化分析。"
+```
+
+### 3. 缓存机制
+**目标**：避免重复计算，减少token消耗
+
+**实现方式**：
+- 结果缓存系统
+- 智能缓存策略
+- 缓存失效机制
+
+**缓存策略**：
+- 常用结果缓存（如战略分析框架）
+- 相似任务结果复用
+- 时间敏感数据实时获取
+
+### 4. 并行处理优化
+**目标**：提高处理效率，减少总token消耗
+
+**优化措施**：
+- 智能任务分组
+- 并行执行优化
+- 资源分配算法
+
+**并行策略**：
+- 相似任务并行处理
+- 资源密集型任务串行
+- 优先级调度算法
+
+### 5. Token使用监控
+**目标**：实时监控和优化token消耗
+
+**监控指标**：
+- 每个子Agent的token消耗
+- 总token使用量
+- token效率比
+
+**优化算法**：
+```python
+def optimize_token_usage():
+    monitor_token_usage()
+    if token_efficiency < THRESHOLD:
+        adjust_prompt_structure()
+        optimize_agent_selection()
+    return optimized_result
+```
+
+## 触发条件优化：
+当任务满足以下任一条件时，进入多Agent模式：
+- 复杂决策（复杂度 ≥ 0.7）
+- 多步骤执行（步骤数 ≥ 3）
+- 战略分析（需要结构化输出）
+- 长期规划（时间跨度 ≥ 6个月）
+- 需要结构化产出
+
+## 调度规则：
+- 每个子Agent只负责单一任务
+- 子Agent之间不得通信
+- 子Agent不保留长期记忆
+- 所有结果必须回传主控
+- 主控负责最终整合与质量审核
+
+## 禁止行为：
+- 子Agent递归创建子Agent
+- 循环调度
+- 无限制扩展Agent数量
+- 重复分析同一问题
+- 无限推理循环
+
+## 优化效果预期：
+- Token消耗减少：30-50%
+- 处理效率提升：20-40%
+- 系统稳定性增强
+
+## 配置参数：
+```python
+# 复杂度阈值
+LOW_COMPLEXITY_THRESHOLD = 0.3
+HIGH_COMPLEXITY_THRESHOLD = 0.7
+
+# 缓存参数
+CACHE_EXPIRY_TIME = 3600  # 秒
+CACHE_SIZE_LIMIT = 1000  # 条目数
+
+# 并行参数
+MAX_PARALLEL_TASKS = 3
+
+# 优化开关
+ENABLE_TOKEN_OPTIMIZATION = True
+ENABLE_CACHE_MECHANISM = True
+ENABLE_PARALLEL_PROCESSING = True
+```
+
+## 执行流程：
+1. 智能任务预分析
+2. 优化调度决策
+3. 管理子Agent执行
+4. 监控token消耗
+5. 整合优化结果
+
+记住：调度协议只定义优化规则，不执行具体逻辑，最大限度减少token消耗。

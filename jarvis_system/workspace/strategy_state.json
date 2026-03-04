@@ -1,0 +1,115 @@
+{
+  "version": "1.0",
+  "primary_goal": {
+    "id": "goal_capability_leap",
+    "title": "能力跃迁",
+    "description": "认知深度、决策质量、执行效率的持续提升",
+    "priority": 1,
+    "target_date": "2027-12-31",
+    "status": "active",
+    "progress": 0.1,
+    "key_results": [
+      {"id": "kr1", "title": "认知框架升级", "progress": 0.2, "status": "active"},
+      {"id": "kr2", "title": "决策模型优化", "progress": 0.1, "status": "planning"},
+      {"id": "kr3", "title": "执行系统建立", "progress": 0.0, "status": "pending"}
+    ]
+  },
+  "secondary_goals": [
+    {
+      "id": "goal_wealth_leap",
+      "title": "财富跃迁",
+      "description": "通过战略决策与资源整合实现财富增长",
+      "priority": 2,
+      "target_date": "2028-12-31",
+      "status": "active",
+      "progress": 0.05,
+      "key_results": []
+    },
+    {
+      "id": "goal_autonomy",
+      "title": "人生自主度提升",
+      "description": "获得更多人生选择权和控制感",
+      "priority": 3,
+      "target_date": "2029-12-31",
+      "status": "active",
+      "progress": 0.0,
+      "key_results": []
+    }
+  ],
+  "current_strategy": {
+    "name": "能力优先积累",
+    "focus_areas": [
+      "认知框架升级",
+      "决策模型优化",
+      "资源整合能力"
+    ],
+    "time_allocation": {
+      "learning": 0.4,
+      "execution": 0.3,
+      "reflection": 0.2,
+      "rest": 0.1
+    },
+    "risk_approach": "moderate",
+    "review_frequency": "weekly"
+  },
+  "active_projects": [],
+  "risk_map": [
+    {
+      "id": "risk_1",
+      "domain": "focus",
+      "description": "专注力分散",
+      "severity": "medium",
+      "mitigation": "建立固定日程，减少干扰",
+      "monitoring": "每周复盘专注时长"
+    },
+    {
+      "id": "risk_2", 
+      "domain": "financial",
+      "description": "投资决策失误",
+      "severity": "medium",
+      "mitigation": "严格执行风控规则，分散仓位",
+      "monitoring": "定期检查仓位和止损线"
+    },
+    {
+      "id": "risk_3",
+      "domain": "health",
+      "description": "精力下降",
+      "severity": "low",
+      "mitigation": "保证睡眠和运动",
+      "monitoring": "追踪睡眠数据"
+    }
+  ],
+  "opportunity_map": [
+    {
+      "id": "opp_1",
+      "domain": "capability",
+      "description": "新技能学习机会",
+      "potential": "high",
+      "action": "调研并选择适合的技能方向",
+      "timeline": "2026-Q1"
+    },
+    {
+      "id": "opp_2",
+      "domain": "financial", 
+      "description": "市场机会",
+      "potential": "medium",
+      "action": "持续关注，等待合适时机",
+      "timeline": "ongoing"
+    }
+  ],
+  "strategy_evolution": {
+    "last_review": "2026-02-21T12:00:00Z",
+    "next_review": "2026-02-28T12:00:00Z",
+    "adjustments_made": [],
+    "performance_metrics": {
+      "goal_alignment_score": 0.85,
+      "execution_efficiency": 0.6,
+      "risk_managed_score": 0.8
+    }
+  },
+  "metadata": {
+    "created_at": "2026-02-21T13:30:00Z",
+    "updated_at": "2026-02-21T13:30:00Z",
+    "engine_version": "v5_strategy"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-03-21",
+  "life_stage": "growth_accumulation",
+  "weight_model": {
+    "goal_clarity": {
+      "base_weight": 10,
+      "current_weight": 10,
+      "modifier": 0,
+      "reason": "基础权重"
+    },
+    "info_completeness": {
+      "base_weight": 10,
+      "current_weight": 10,
+      "modifier": 0,
+      "reason": "基础权重"
+    },
+    "risk_awareness": {
+      "base_weight": 10,
+      "current_weight": 12,
+      "modifier": 2,
+      "reason": "成长阶段风险敏感度较高"
+    },
+    "probability_reasonableness": {
+      "base_weight": 10,
+      "current_weight": 10,
+      "modifier": 0,
+      "reason": "基础权重"
+    },
+    "execution_clarity": {
+      "base_weight": 10,
+      "current_weight": 8,
+      "modifier": -2,
+      "reason": "积累期更注重决策质量而非执行速度"
+    }
+  },
+  "total_max": 50,
+  "adjustment_triggers": {
+    "life_stage_change": {
+      "enabled": true,
+      "description": "人生阶段变化时重新评估权重"
+    },
+    "risk_exposure_change": {
+      "enabled": true,
+      "threshold": 0.2,
+      "description": "风险敞口变化超过20%时调整"
+    },
+    "asset_scale_change": {
+      "enabled": true,
+      "threshold_percent": 30,
+      "description": "资产规模变化超过30%时调整"
+    }
+  },
+  "life_stage_weights": {
+    "exploration": {
+      "goal_clarity": 8,
+      "info_completeness": 12,
+      "risk_awareness": 8,
+      "probability_reasonableness": 10,
+      "execution_clarity": 12
+    },
+    "accumulation": {
+      "goal_clarity": 10,
+      "info_completeness": 10,
+      "risk_awareness": 12,
+      "probability_reasonableness": 10,
+      "execution_clarity": 8
+    },
+    "breakthrough": {
+      "goal_clarity": 12,
+      "info_completeness": 10,
+      "risk_awareness": 10,
+      "probability_reasonableness": 8,
+      "execution_clarity": 10
+    },
+    "leap": {
+      "goal_clarity": 12,
+      "info_completeness": 12,
+      "risk_awareness": 8,
+      "probability_reasonableness": 8,
+      "execution_clarity": 10
+    },
+    "stability": {
+      "goal_clarity": 10,
+      "info_completeness": 10,
+      "risk_awareness": 10,
+      "probability_reasonableness": 10,
+      "execution_clarity": 10
+    }
+  },
+  "history": []
+}

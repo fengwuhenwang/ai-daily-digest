@@ -1,0 +1,12 @@
+{
+  "high_performance_contexts": [],
+  "low_performance_contexts": [],
+  "bias_pattern_distribution": {},
+  "risk_accuracy_score": 0,
+  "confidence_accuracy_gap": 0,
+  "decision_velocity_optimal_range": "",
+  "stress_threshold": 0,
+  "domain_strength_map": {},
+  "meta_learning_score": 0,
+  "last_updated": ""
+}

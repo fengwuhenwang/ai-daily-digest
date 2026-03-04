@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "runtime": {
+    "status": "idle",
+    "current_task": null,
+    "last_activity": "2026-02-21T00:00:00Z"
+  },
+  "metrics": {
+    "session_token_usage": {
+      "input": 0,
+      "output": 0,
+      "total": 0
+    },
+    "tasks_completed": 0,
+    "cache_hits": 0,
+    "tool_calls": 0
+  },
+  "system": {
+    "architecture_version": "5.0.0",
+    "optimization_enabled": true
+  }
+}
