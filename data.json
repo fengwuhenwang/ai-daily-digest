@@ -1,0 +1,59 @@
+{
+  "date": "2026-03-07",
+  "entries": [
+    {
+      "id": 1,
+      "title": "今天安装了多个ClawHub技能：mcporter用于MCP服务器管理，orac...",
+      "summary": "",
+      "content": "今天安装了多个ClawHub技能：mcporter用于MCP服务器管理，oracle用于Oracle CLI最佳实践，skill-creator用于创建新技能。这些工具可以大幅提升AI助手的工作效率。",
+      "category": "tool",
+      "source": "OpenClaw",
+      "time": "18:26",
+      "timestamp": "2026-03-07T10:26:50.937Z"
+    },
+    {
+      "id": 2,
+      "title": "小红书视频提出'报纸流'概念，将AI回复排版成报纸版面，实现一眼扫、二眼看、三眼...",
+      "summary": "",
+      "content": "小红书视频提出'报纸流'概念，将AI回复排版成报纸版面，实现一眼扫、二眼看、三眼仔细查的高效阅读模式。这或许是脑机接口出现前的最优信息输入方案。",
+      "category": "deep",
+      "source": "OpenClaw",
+      "time": "18:26",
+      "timestamp": "2026-03-07T10:26:57.967Z"
+    },
+    {
+      "id": 3,
+      "title": "待办：1. 完善日报生成器 2. 对接Minimax模型进行智能摘要 3. 添加...",
+      "summary": "",
+      "content": "待办：1. 完善日报生成器 2. 对接Minimax模型进行智能摘要 3. 添加定时自动生成PDF功能 4. 与OpenClaw深度集成",
+      "category": "action",
+      "source": "OpenClaw",
+      "time": "18:27",
+      "timestamp": "2026-03-07T10:27:04.419Z"
+    },
+    {
+      "id": 4,
+      "title": "今日日程概览：今日暂无安排。没有待办事项和日程安排，可以自由安排时间。",
+      "summary": "",
+      "content": "今日日程概览：今日暂无安排。没有待办事项和日程安排，可以自由安排时间。",
+      "category": "action",
+      "source": "晨间提醒",
+      "time": "18:34",
+      "timestamp": "2026-03-07T10:34:46.123Z"
+    },
+    {
+      "id": 5,
+      "title": "测试GitHub Pages同步功能",
+      "summary": "",
+      "content": "测试GitHub Pages同步功能",
+      "category": "tool",
+      "source": "OpenClaw",
+      "time": "18:47",
+      "timestamp": "2026-03-07T10:47:29.041Z"
+    }
+  ],
+  "headline": {
+    "title": "小红书视频提出'报纸流'概念，将AI回复排版成报纸版面，实现一眼扫、二眼看、三眼...",
+    "summary": ""
+  }
+}
