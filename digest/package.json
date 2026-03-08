@@ -1,0 +1,13 @@
+{
+  "name": "ai-daily-digest",
+  "version": "1.0.0",
+  "description": "AI日报 - 报纸流信息组织系统",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "deploy": "node deploy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fengwuhenwang/ai-daily-digest.git"
+  }
+}
