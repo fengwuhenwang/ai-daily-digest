@@ -10,6 +10,16 @@
       "source": "晨间提醒",
       "time": "08:00",
       "timestamp": "2026-03-09T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "今日工作日最后更新 - 周一，AI日报运行正常，等待明日继续。",
+      "summary": "",
+      "content": "今日工作日最后更新 - 周一，AI日报运行正常，等待明日继续。",
+      "category": "general",
+      "source": "OpenClaw",
+      "time": "18:31",
+      "timestamp": "2026-03-09T10:31:57.421Z"
     }
   ],
   "headline": {
