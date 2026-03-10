@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>AI日报 - Daily AI Digest</title>
     <style>
         * {
@@ -67,20 +70,6 @@
             font-style: italic;
         }
         
-        /* 分栏布局 */
-        .columns {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .column {
-            flex: 1;
-        }
-        
-        .column.wide {
-            flex: 2;
-        }
-        
         /* 文章卡片 */
         .article {
             margin-bottom: 25px;
@@ -111,20 +100,6 @@
             text-align: justify;
         }
         
-        .article .highlight {
-            background: #ffeb3b;
-            padding: 2px 4px;
-        }
-        
-        /* 引用框 */
-        .quote-box {
-            background: #f9f9f9;
-            border-left: 4px solid #333;
-            padding: 15px;
-            margin: 20px 0;
-            font-style: italic;
-        }
-        
         /* 标签 */
         .tag {
             display: inline-block;
@@ -135,45 +110,22 @@
             margin-right: 5px;
         }
         
-        /* 快速导航 */
-        .quick-nav {
-            background: #333;
-            color: #fff;
-            padding: 15px;
-            margin-top: 30px;
-        }
+        .tag.core { background: #e74c3c; }
+        .tag.depth { background: #3498db; }
+        .tag.action { background: #27ae60; }
+        .tag.tool { background: #9b59b6; }
         
-        .quick-nav h4 {
-            font-size: 14px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        
-        .quick-nav ul {
-            list-style: none;
-            columns: 3;
-        }
-        
-        .quick-nav li {
-            font-size: 13px;
-            margin-bottom: 5px;
-            cursor: pointer;
-        }
-        
-        .quick-nav li:hover {
-            text-decoration: underline;
+        /* 加载状态 */
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
         }
         
         /* 响应式 */
         @media (max-width: 768px) {
-            .columns {
-                flex-direction: column;
-            }
             .masthead h1 {
                 font-size: 32px;
-            }
-            .quick-nav ul {
-                columns: 2;
             }
         }
     </style>
@@ -183,111 +135,75 @@
         <!-- 报头 -->
         <header class="masthead">
             <h1>AI 日 报</h1>
-            <div class="date">2026年3月7日 星期六 | 第001期</div>
+            <div class="date" id="header-date">加载中...</div>
         </header>
         
         <!-- 头条 -->
-        <section class="headline">
-            <h2>拓展人类输入带宽：报纸流成为AI时代最高效的信息处理模式</h2>
-            <div class="summary">
-                不止AI需要skill系统，人也需要。面对海量AI生成内容，传统IM消息模式效率低下。
-                报纸版面式的信息组织方式——一眼扫、二眼看、三眼仔细查——或许是脑机接口出现前的最优解。
-            </div>
+        <section class="headline" id="headline-section">
+            <h2 id="headline-title">加载中...</h2>
+            <div class="summary" id="headline-summary"></div>
         </section>
         
-        <!-- 分栏内容 -->
-        <div class="columns">
-            <!-- 左栏：核心要点 -->
-            <div class="column">
-                <article class="article">
-                    <span class="tag">核心</span>
-                    <h3>问题：碎片化阅读的低效</h3>
-                    <div class="meta">来源：AI交互分析</div>
-                    <p>
-                        当前与AI的交互多通过<span class="highlight">聊天窗口</span>完成，
-                        长回复需要不断滚动阅读，信息密度低，重点不突出。
-                        用户容易陷入"扒拉消息"的低效循环。
-                    </p>
-                </article>
-                
-                <article class="article">
-                    <span class="tag">方案</span>
-                    <h3>报纸流的三大优势</h3>
-                    <div class="meta">来源：认知科学</div>
-                    <p>
-                        <strong>1. 空间利用：</strong>报纸版面天生为高密度信息设计<br>
-                        <strong>2. 层级清晰：</strong>标题→副标题→摘要→详情<br>
-                        <strong>3. 扫描友好：</strong>符合人眼F型浏览模式
-                    </p>
-                </article>
-            </div>
-            
-            <!-- 中栏：详细分析 -->
-            <div class="column wide">
-                <article class="article">
-                    <span class="tag">深度</span>
-                    <h3>实践案例：日报式信息流的实现</h3>
-                    <div class="meta">作者：七叶怀瑾 | Arch Linux + Hyprland</div>
-                    <p>
-                        通过将AI长回复自动排版成报纸版面，实现了"一眼把握全局，二眼定位重点，三眼深入细节"的三层阅读模式。
-                        这种方法特别适合处理OpenClaw等AI助手生成的高质量长文本内容。
-                    </p>
-                    <div class="quote-box">
-                        "报纸这个东西，它简直就是为这量身定制的。当你面对一大堆非常高密度的信息的时候，
-                        最有效的输入形式就是拿它像这种版面形式组织出来。"
-                    </div>
-                    <p>
-                        技术实现上，可以通过简单的HTML+CSS模板，配合自动化脚本，
-                        将AI输出自动转换为报纸版面。核心是将内容分为：
-                        <span class="highlight">头条要闻</span>、
-                        <span class="highlight">要点速览</span>、
-                        <span class="highlight">深度分析</span>
-                        三个层级。
-                    </p>
-                </article>
-            </div>
-            
-            <!-- 右栏：待办/快速参考 -->
-            <div class="column">
-                <article class="article">
-                    <span class="tag">行动</span>
-                    <h3>今日待办</h3>
-                    <div class="meta">来自OpenClaw</div>
-                    <p>
-                        ✅ 创建报纸流MVP样板<br>
-                        ⏳ 设计自动排版算法<br>
-                        ⏳ 集成OpenClaw输出钩子<br>
-                        ⏳ 添加搜索和标签功能
-                    </p>
-                </article>
-                
-                <article class="article">
-                    <span class="tag">工具</span>
-                    <h3>技能清单更新</h3>
-                    <div class="meta">ClawHub</div>
-                    <p>
-                        今日已安装技能：<br>
-                        • mcporter - MCP服务器管理<br>
-                        • oracle - Oracle CLI最佳实践<br>
-                        • skill-creator - 技能创建工具<br>
-                        • healthcheck - 主机安全检查
-                    </p>
-                </article>
-            </div>
+        <!-- 内容区域 -->
+        <div id="entries-container">
+            <div class="loading">正在加载日报内容...</div>
         </div>
-        
-        <!-- 快速导航 -->
-        <nav class="quick-nav">
-            <h4>快速跳转</h4>
-            <ul>
-                <li>📊 今日数据概览</li>
-                <li>💡 AI交互技巧</li>
-                <li>🔧 工具使用指南</li>
-                <li>📚 知识库更新</li>
-                <li>⚠️ 风险提醒</li>
-                <li>🎯 长期目标</li>
-            </ul>
-        </nav>
     </div>
+    
+    <script>
+        // 缓存破坏：添加时间戳
+        const cacheBuster = '?t=' + Date.now();
+        
+        // 加载数据
+        fetch('data.json' + cacheBuster)
+            .then(response => response.json())
+            .then(data => {
+                // 更新日期
+                const dateObj = new Date(data.date);
+                const days = ['日', '一', '二', '三', '四', '五', '六'];
+                const dateStr = `${data.date.replace(/-/g, '年')}月${dateObj.getDate()}日 星期${days[dateObj.getDay()]}`;
+                document.getElementById('header-date').textContent = dateStr + ' | AI日报';
+                
+                // 更新头条
+                if (data.headline) {
+                    document.getElementById('headline-title').textContent = data.headline.title;
+                    document.getElementById('headline-summary').textContent = data.headline.summary;
+                }
+                
+                // 渲染条目
+                const container = document.getElementById('entries-container');
+                if (data.entries && data.entries.length > 0) {
+                    container.innerHTML = '';
+                    data.entries.forEach(entry => {
+                        const tagClass = entry.category || 'general';
+                        const tagText = {
+                            'core': '核心',
+                            'depth': '深度',
+                            'action': '行动',
+                            'tool': '工具',
+                            'general': '一般'
+                        }[tagClass] || tagClass;
+                        
+                        const article = document.createElement('article');
+                        article.className = 'article';
+                        article.innerHTML = `
+                            <span class="tag ${tagClass}">${tagText}</span>
+                            <h3>${entry.title}</h3>
+                            <div class="meta">${entry.source || 'OpenClaw'} | ${entry.time || ''}</div>
+                            ${entry.summary ? `<p>${entry.summary}</p>` : ''}
+                            ${entry.content && entry.content !== entry.title ? `<p>${entry.content}</p>` : ''}
+                        `;
+                        container.appendChild(article);
+                    });
+                } else {
+                    container.innerHTML = '<div class="loading">今日暂无内容，开始与AI对话后日报将自动生成...</div>';
+                }
+            })
+            .catch(error => {
+                console.error('加载失败:', error);
+                document.getElementById('entries-container').innerHTML = 
+                    '<div class="loading">加载失败，请刷新页面重试</div>';
+            });
+    </script>
 </body>
 </html>
