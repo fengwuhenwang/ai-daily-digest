@@ -70,6 +70,20 @@
             font-style: italic;
         }
         
+        /* 分栏布局 */
+        .columns {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .column.wide {
+            flex: 2;
+        }
+        
         /* 文章卡片 */
         .article {
             margin-bottom: 25px;
@@ -100,6 +114,20 @@
             text-align: justify;
         }
         
+        .article .highlight {
+            background: #ffeb3b;
+            padding: 2px 4px;
+        }
+        
+        /* 引用框 */
+        .quote-box {
+            background: #f9f9f9;
+            border-left: 4px solid #333;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
         /* 标签 */
         .tag {
             display: inline-block;
@@ -111,21 +139,50 @@
         }
         
         .tag.core { background: #e74c3c; }
-        .tag.depth { background: #3498db; }
+        .tag.data { background: #3498db; }
+        .tag.depth { background: #9b59b6; }
         .tag.action { background: #27ae60; }
-        .tag.tool { background: #9b59b6; }
+        .tag.tool { background: #f39c12; }
         
-        /* 加载状态 */
-        .loading {
-            text-align: center;
-            padding: 50px;
-            color: #666;
+        /* 快速导航 */
+        .quick-nav {
+            background: #333;
+            color: #fff;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        
+        .quick-nav h4 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .quick-nav ul {
+            list-style: none;
+            columns: 3;
+        }
+        
+        .quick-nav li {
+            font-size: 13px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        
+        .quick-nav li:hover {
+            text-decoration: underline;
         }
         
         /* 响应式 */
         @media (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+            }
             .masthead h1 {
                 font-size: 32px;
+            }
+            .quick-nav ul {
+                columns: 2;
             }
         }
     </style>
@@ -135,77 +192,143 @@
         <!-- 报头 -->
         <header class="masthead">
             <h1>AI 日 报</h1>
-            <div class="date" id="header-date">加载中...</div>
+            <div class="date">2026年3月10日 星期二 | 第004期</div>
         </header>
         
         <!-- 头条 -->
-        <section class="headline" id="headline-section">
-            <h2 id="headline-title">加载中...</h2>
-            <div class="summary" id="headline-summary"></div>
+        <section class="headline">
+            <h2>DIPROBIO私域激活：从0.88%到1.5%的30天战役</h2>
+            <div class="summary">
+                母婴营养品品牌面临增长停滞，私域6-7万用户转化率仅0.88%。深度诊断发现三大核心问题，
+                制定30天激活计划目标提升转化率至1.5%，月销从4.6万增至15万。
+            </div>
         </section>
         
-        <!-- 内容区域 -->
-        <div id="entries-container">
-            <div class="loading">正在加载日报内容...</div>
+        <!-- 分栏内容 -->
+        <div class="columns">
+            <!-- 左栏：核心要点 -->
+            <div class="column">
+                <article class="article">
+                    <span class="tag core">核心</span>
+                    <h3>三大业务危机</h3>
+                    <div class="meta">来源：DIPROBIO诊断</div>
+                    <p>
+                        母婴营养品品牌面临<span class="highlight">增长停滞</span>（同比-19.44%）、
+                        <span class="highlight">新客难获取</span>（公域成本高）、
+                        <span class="highlight">团队疲倦</span>（缺乏创新动力）三大核心问题。
+                        月销500万规模，20人团队，急需突破口。
+                    </p>
+                </article>
+                
+                <article class="article">
+                    <span class="tag data">数据</span>
+                    <h3>私域转化率仅0.88%</h3>
+                    <div class="meta">来源：2025全年分析</div>
+                    <p>
+                        <strong>用户规模：</strong>6-7万私域用户<br>
+                        <strong>转化率：</strong>0.88%（正常5-10%）<br>
+                        <strong>月销占比：</strong><1%（严重浪费）<br>
+                        <strong>激活潜力：</strong>巨大，获客成本4-8元/人
+                    </p>
+                </article>
+            </div>
+            
+            <!-- 中栏：详细分析 -->
+            <div class="column wide">
+                <article class="article">
+                    <span class="tag depth">深度</span>
+                    <h3>渠道分析：京东自营成唯一亮点</h3>
+                    <div class="meta">来源：2026年2月销售数据</div>
+                    <p>
+                        2月销售461.8万，渠道结构严重失衡。京东自营232.1万（50.2%，-10.6%）是唯一超目标渠道，
+                        其他渠道全面下滑：天猫官旗-17.5%、抖音旗舰-26.7%、天猫超市暴跌-69.6%。
+                        跨境渠道腰斩（-47%到-51%），新兴渠道增长乏力。
+                    </p>
+                    <div class="quote-box">
+                        "渠道结构单一，过度依赖京东和天猫。当这两个渠道下滑时，整体业务就会受到严重冲击。"
+                    </div>
+                    <p>
+                        价格策略分析：主力价格带199-499元，益生菌系列为核心产品线。
+                        多瓶装折扣10-20%，活动空间10-30%毛利，促销弹性有限。
+                        需要通过私域激活来提升整体盈利能力。
+                    </p>
+                </article>
+            </div>
+            
+            <!-- 右栏：待办/快速参考 -->
+            <div class="column">
+                <article class="article">
+                    <span class="tag action">行动</span>
+                    <h3>30天激活计划</h3>
+                    <div class="meta">私域战役目标</div>
+                    <p>
+                        ✅ 深度业务诊断完成<br>
+                        ⏳ 老带新裂变活动设计<br>
+                        ⏳ 会员专属福利制定<br>
+                        ⏳ 社群运营启动<br>
+                        <strong>目标：</strong>月销4.6万→15万<br>
+                        <strong>转化率：</strong>0.88%→1.5%
+                    </p>
+                </article>
+                
+                <article class="article">
+                    <span class="tag tool">工具</span>
+                    <h3>技术能力升级</h3>
+                    <div class="meta">今日完成</div>
+                    <p>
+                        ✅ PDF解析工具修复<br>
+                        ✅ Excel解析能力就绪<br>
+                        ✅ AI日报数据结构优化<br>
+                        ✅ 业务分析框架建立<br>
+                        支持xlsx/xls/csv格式，<br>
+                        为数据分析提供基础工具
+                    </p>
+                </article>
+            </div>
         </div>
+        
+        <!-- 快速导航 -->
+        <nav class="quick-nav">
+            <h4>快速跳转</h4>
+            <ul>
+                <li>📊 业务数据概览</li>
+                <li>💡 私域激活策略</li>
+                <li>🔧 数据分析工具</li>
+                <li>📚 渠道优化方案</li>
+                <li>⚠️ 风险预警</li>
+                <li>🎯 30天目标追踪</li>
+            </ul>
+        </nav>
     </div>
     
     <script>
         // 缓存破坏：添加时间戳
         const cacheBuster = '?t=' + Date.now();
         
-        // 加载数据
-        fetch('data.json' + cacheBuster)
-            .then(response => response.json())
-            .then(data => {
-                // 更新日期
-                const dateObj = new Date(data.date);
-                const days = ['日', '一', '二', '三', '四', '五', '六'];
-                const month = dateObj.getMonth() + 1;
-                const day = dateObj.getDate();
-                const dateStr = `${dateObj.getFullYear()}年${month}月${day}日 星期${days[dateObj.getDay()]}`;
-                document.getElementById('header-date').textContent = dateStr + ' | AI日报';
-                
-                // 更新头条
-                if (data.headline) {
-                    document.getElementById('headline-title').textContent = data.headline.title;
-                    document.getElementById('headline-summary').textContent = data.headline.summary;
-                }
-                
-                // 渲染条目
-                const container = document.getElementById('entries-container');
-                if (data.entries && data.entries.length > 0) {
-                    container.innerHTML = '';
-                    data.entries.forEach(entry => {
-                        const tagClass = entry.category || 'general';
-                        const tagText = {
-                            'core': '核心',
-                            'depth': '深度',
-                            'action': '行动',
-                            'tool': '工具',
-                            'general': '一般'
-                        }[tagClass] || tagClass;
-                        
-                        const article = document.createElement('article');
-                        article.className = 'article';
-                        article.innerHTML = `
-                            <span class="tag ${tagClass}">${tagText}</span>
-                            <h3>${entry.title}</h3>
-                            <div class="meta">${entry.source || 'OpenClaw'} | ${entry.time || ''}</div>
-                            ${entry.summary ? `<p>${entry.summary}</p>` : ''}
-                            ${entry.content && entry.content !== entry.title ? `<p>${entry.content}</p>` : ''}
-                        `;
-                        container.appendChild(article);
-                    });
-                } else {
-                    container.innerHTML = '<div class="loading">今日暂无内容，开始与AI对话后日报将自动生成...</div>';
-                }
-            })
-            .catch(error => {
-                console.error('加载失败:', error);
-                document.getElementById('entries-container').innerHTML = 
-                    '<div class="loading">加载失败，请刷新页面重试</div>';
-            });
+        // 强制刷新页面（解决移动端缓存问题）
+        if (performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD) {
+            location.reload(true);
+        }
+        
+        // 检查是否需要更新内容
+        function checkForUpdates() {
+            fetch('data.json' + cacheBuster)
+                .then(response => response.json())
+                .then(data => {
+                    const currentData = document.querySelector('.newspaper').innerHTML;
+                    // 这里可以添加更复杂的更新检查逻辑
+                    console.log('数据已更新:', data.meta.updatedAt);
+                })
+                .catch(error => {
+                    console.error('更新检查失败:', error);
+                });
+        }
+        
+        // 页面加载完成后检查更新
+        window.addEventListener('load', checkForUpdates);
+        
+        // 每5分钟检查一次更新
+        setInterval(checkForUpdates, 5 * 60 * 1000);
     </script>
 </body>
 </html>
