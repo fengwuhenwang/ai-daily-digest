@@ -161,7 +161,9 @@
                 // 更新日期
                 const dateObj = new Date(data.date);
                 const days = ['日', '一', '二', '三', '四', '五', '六'];
-                const dateStr = `${data.date.replace(/-/g, '年')}月${dateObj.getDate()}日 星期${days[dateObj.getDay()]}`;
+                const month = dateObj.getMonth() + 1;
+                const day = dateObj.getDate();
+                const dateStr = `${dateObj.getFullYear()}年${month}月${day}日 星期${days[dateObj.getDay()]}`;
                 document.getElementById('header-date').textContent = dateStr + ' | AI日报';
                 
                 // 更新头条
