@@ -1,36 +1,58 @@
-# AI Daily Digest - GitHub Pages 部署指南
+# AI 日报 - 技术文档
 
-## 快速部署
+## 架构
 
-### 1. 创建 GitHub 仓库
-- 访问 https://github.com/new
-- 仓库名: `ai-daily-digest`
-- 选择 Public
-- 勾选 "Add a README file"
+- **GitHub Pages**: https://fengwuhenwang.github.io/ai-daily-digest/
+- **数据源**: `data.json` (动态加载)
+- **渲染**: `index.html` 从 data.json 读取并动态渲染
 
-### 2. 上传文件
-将以下文件上传到仓库：
-- `index.html` - 主页面
-- `data.json` - 日报数据
-- `.github/workflows/deploy.yml` - 自动部署配置
+## 更新流程
 
-### 3. 启用 GitHub Pages
-- 进入仓库 Settings → Pages
-- Source 选择 "Deploy from a branch"
-- Branch 选择 "main" / "/ (root)"
-- 保存后获得链接: `https://你的用户名.github.io/ai-daily-digest`
-
-## 本地预览
-```bash
-# 进入 digest 目录
-cd digest
-
-# 启动本地服务器
-npx serve .
-
-# 访问 http://localhost:3000
+### 只需要更新 data.json
+```json
+{
+  "date": "2026-03-13",
+  "headline": {
+    "title": "标题",
+    "summary": "摘要"
+  },
+  "entries": [
+    {
+      "id": 1,
+      "title": "文章标题",
+      "summary": "摘要",
+      "content": "完整内容（可选）",
+      "category": "action|tools|business|analysis|learning",
+      "source": "来源",
+      "time": "09:00"
+    }
+  ]
+}
 ```
 
-## 更新日报
-运行本地脚本后，数据会更新到 `data.json`，
-通过 Git 推送到 GitHub 即可自动更新网页。
+### Category 分类
+- `action` → 行动计划
+- `tools` → 工具维护  
+- `business` → 业务分析
+- `analysis` → 数据洞察
+- `learning` → 学习研究
+
+### 部署命令
+```bash
+cd ai-daily-digest-repo
+git add data.json
+git commit -m "Update $(date +%Y-%m-%d)"
+git push origin main
+```
+
+## 注意事项
+
+### ⚠️ 历史问题（已修复）
+- **问题**：index.html 之前是硬编码静态内容
+- **原因**：每次只更新 data.json，没同步 index.html
+- **修复**：index.html 改为动态渲染，从 data.json 读取
+- **结果**：现在只需更新 data.json，无需动 index.html
+
+## GitHub Pages 缓存
+- 更新后通常 1-2 分钟生效
+- 如遇缓存，尝试：`Ctrl+Shift+R` 强制刷新
