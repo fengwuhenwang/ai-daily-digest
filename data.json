@@ -1,55 +1,45 @@
 {
-  "date": "2026-03-11",
+  "date": "2026-03-12",
   "entries": [
     {
       "id": 1,
-      "title": "程序员副业认知课程 PRD",
-      "summary": "- **状态**: 需求分析中",
-      "content": "- **状态**: 需求分析中\n- **文档**: PRD框架已出，待完善内容\n- **下一步**: \n  - [ ] 完善各章节具体内容\n  - [ ] 确认课程大纲\n  - [ ] 商业模式验证\n---",
+      "title": "OpenClaw 官方语音功能",
+      "summary": "- **Talk Mode**: 连续语音对话循环（监听→转录→回复→TTS播放）",
+      "content": "- **Talk Mode**: 连续语音对话循环（监听→转录→回复→TTS播放）\n- **Voice Wake**: 语音唤醒词功能\n- **限制**: 主要支持 macOS/iOS/Android，Windows 不原生支持",
       "category": "action",
       "source": "工作记录",
       "time": "09:00",
-      "timestamp": "2026-03-11T00:00:00.000Z"
+      "timestamp": "2026-03-12T00:00:00.000Z"
     },
     {
       "id": 2,
-      "title": "昨日诊断要点 (2026-03-10)",
-      "summary": "- 私域转化率: 0.88% → 目标1.5%",
-      "content": "- 私域转化率: 0.88% → 目标1.5%\n- 月销目标: 4.6万 → 15万\n- 三大问题: 增长停滞、新客难获取、团队疲倦",
+      "title": "Windows 语音方案",
+      "summary": "1. **WebChat + 浏览器语音输入**: 最简单，用 Chrome/Edge 语音输入",
+      "content": "1. **WebChat + 浏览器语音输入**: 最简单，用 Chrome/Edge 语音输入\n2. **Clawdbot (Docker)**: 需要 Docker，可完整语音对话\n3. **手机作为麦克风**: iOS/Android App 作为语音输入设备",
       "category": "action",
       "source": "工作记录",
       "time": "09:00",
-      "timestamp": "2026-03-11T00:00:00.000Z"
+      "timestamp": "2026-03-12T00:00:00.000Z"
     },
     {
       "id": 3,
-      "title": "待执行",
-      "summary": "- [ ] 私域激活方案落地",
-      "content": "- [ ] 私域激活方案落地\n- [ ] 老带新裂变活动设计\n- [ ] 会员福利体系搭建\n---",
+      "title": "待验证",
+      "summary": "- 用户选择了方案1还是方案2待确认",
+      "content": "- 用户选择了方案1还是方案2待确认",
       "category": "action",
       "source": "工作记录",
       "time": "09:00",
-      "timestamp": "2026-03-11T00:00:00.000Z"
-    },
-    {
-      "id": 4,
-      "title": "待办事项 (6项)",
-      "summary": "完善各章节具体内容；确认课程大纲；商业模式验证",
-      "content": "1. 完善各章节具体内容\n2. 确认课程大纲\n3. 商业模式验证\n4. 私域激活方案落地\n5. 老带新裂变活动设计\n6. 会员福利体系搭建",
-      "category": "action",
-      "source": "待办清单",
-      "time": "20:00",
-      "timestamp": "2026-03-11T00:00:00.000Z"
+      "timestamp": "2026-03-12T00:00:00.000Z"
     }
   ],
   "headline": {
-    "title": "程序员副业认知课程 PRD",
-    "summary": "昨日工作：- **状态**: 需求分析中"
+    "title": "OpenClaw 官方语音功能",
+    "summary": "昨日工作：- **Talk Mode**: 连续语音对话循环（监听→转录→回复→TTS播放）"
   },
   "meta": {
-    "updatedAt": "2026-03-12T00:02:33.811Z",
+    "updatedAt": "2026-03-13T00:47:19.750Z",
     "version": "2.2",
-    "cacheBuster": "1773273753811",
+    "cacheBuster": "1773362839750",
     "categories": {
       "action": "行动计划",
       "tools": "工具维护",
@@ -60,15 +50,8 @@
     }
   },
   "today": {
-    "date": "2026-03-12",
-    "todos": [
-      "完善各章节具体内容",
-      "确认课程大纲",
-      "商业模式验证",
-      "私域激活方案落地",
-      "老带新裂变活动设计",
-      "会员福利体系搭建"
-    ],
+    "date": "2026-03-13",
+    "todos": [],
     "importantIssues": []
   }
 }
