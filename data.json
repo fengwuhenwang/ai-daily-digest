@@ -1,57 +1,36 @@
 {
-  "date": "2026-03-13",
+  "date": "2026-03-19",
   "entries": [
     {
       "id": 1,
-      "title": "OpenClaw 官方语音功能",
-      "summary": "- **Talk Mode**: 连续语音对话循环（监听→转录→回复→TTS播放）",
-      "content": "- **Talk Mode**: 连续语音对话循环（监听→转录→回复→TTS播放）\n- **Voice Wake**: 语音唤醒词功能\n- **限制**: 主要支持 macOS/iOS/Android，Windows 不原生支持",
-      "category": "action",
-      "source": "工作记录",
-      "time": "09:00",
-      "timestamp": "2026-03-12T00:00:00.000Z"
+      "title": "晨间AI资讯与工具更新",
+      "summary": "",
+      "content": "晨间AI资讯与工具更新",
+      "category": "tool",
+      "source": "OpenClaw",
+      "time": "19:02",
+      "timestamp": "2026-03-15T11:02:01.679Z"
     },
     {
       "id": 2,
-      "title": "Windows 语音方案",
-      "summary": "1. **WebChat + 浏览器语音输入**: 最简单，用 Chrome/Edge 语音输入",
-      "content": "1. **WebChat + 浏览器语音输入**: 最简单，用 Chrome/Edge 语音输入\n2. **Clawdbot (Docker)**: 需要 Docker，可完整语音对话\n3. **手机作为麦克风**: iOS/Android App 作为语音输入设备",
-      "category": "action",
-      "source": "工作记录",
-      "time": "09:00",
-      "timestamp": "2026-03-12T00:00:00.000Z"
+      "title": "🌅 晨间AI资讯与工具更新 - 2026年3月16日 星期一 新的一周新的开始",
+      "summary": "",
+      "content": "🌅 晨间AI资讯与工具更新 - 2026年3月16日 星期一 新的一周新的开始",
+      "category": "tool",
+      "source": "OpenClaw",
+      "time": "08:02",
+      "timestamp": "2026-03-16T00:02:19.783Z"
     },
     {
       "id": 3,
-      "title": "待验证",
-      "summary": "- 用户选择了方案1还是方案2待确认",
-      "content": "- 用户选择了方案1还是方案2待确认",
-      "category": "action",
-      "source": "工作记录",
-      "time": "09:00",
-      "timestamp": "2026-03-12T00:00:00.000Z"
+      "title": "🌅 晨间AI资讯与工具更新 - 2026年3月19日 星期四 新的一天",
+      "summary": "",
+      "content": "🌅 晨间AI资讯与工具更新 - 2026年3月19日 星期四 新的一天",
+      "category": "tool",
+      "source": "OpenClaw",
+      "time": "10:09",
+      "timestamp": "2026-03-19T02:09:54.993Z"
     }
   ],
-  "headline": {
-    "title": "周五开启 - 2026-03-13",
-    "summary": "新的一天，新的开始"
-  },
-  "meta": {
-    "updatedAt": "2026-03-13T00:47:19.750Z",
-    "version": "2.2",
-    "cacheBuster": "1773362839750",
-    "categories": {
-      "action": "行动计划",
-      "tools": "工具维护",
-      "business": "业务分析",
-      "analysis": "数据洞察",
-      "learning": "学习研究",
-      "system": "系统提示"
-    }
-  },
-  "today": {
-    "date": "2026-03-13",
-    "todos": [],
-    "importantIssues": []
-  }
+  "headline": null
 }
